@@ -1,0 +1,8 @@
+{
+    "pretrained_path": "D:/lloyd/datasets/CC/cc1010/trained_models/model_cc1010_v1.pt",
+    "model_path": "D:/lloyd/datasets/CC/cc1010/trained_models/model_cc1010_v1.pt",
+    "data_base_dir": "D:/lloyd/datasets/CC/",
+    "data_list_file_path": "D:/lloyd/datasets/CC/eeg_1010_datalist_v1.json",
+    "tfevent_path": "D:/lloyd/datasets/CC/cc1010/trained_models/tfevent_train/cc1010_v1",
+    "result_list_file_path": "D:/lloyd/datasets/CC/cc1010/result/result_cc1010_v1.json"
+}

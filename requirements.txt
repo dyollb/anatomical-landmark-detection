@@ -1,0 +1,7 @@
+itk-io
+monai
+nibabel
+opencv-python
+tensorboard
+torchvision
+tqdm
