@@ -26,13 +26,13 @@ To create training data for this experiment I annotated 3 _template_ datasets. U
 
 ![base mask](visualization/figures/base_mask.png)
 
-Using [`SimpleITK`](https://pypi.org/project/SimpleITK/) I registered the _template_ head labels to the CC dataset (affine and B-spline). By design the registration finds transforms that map from the moving (CC) to fixed (_template_) space. To transform the _template_ landmarks to the CC space, we need to use the inverse transform.
+Using [`SimpleITK`](https://pypi.org/project/SimpleITK/) I registered the _template_ head labels to the CC dataset (affine and B-spline). By design the registration finds transforms that map from the moving (CC) to fixed (_template_) space. To transform the _template_ landmarks to the CC space, we need to use the inverse transform. For each subject I now have 3 candidate positions for each landmark. To increase the accuracy and remove bias I average these three positions to create my training data for a [RetinaNet](https://arxiv.org/abs/1708.02002).
 
 Since I am using a box detector to locate 3D points, I simply create cubic boxes with fixed width (5mm) in `cccwhd` (X,Y,Z centers and width, height and depth).
 
 ## Adapt MONAI Tutorial
 
-For this purpose I adapted the [detection tutorial](https://github.com/Project-MONAI/tutorials/tree/main/detection) from [MONAI](https://github.com/Project-MONAI). That tutorial predicts lung nodules from CT images. The things I needed to modify included
+For this purpose I adapted the [detection tutorial](https://github.com/Project-MONAI/tutorials/tree/main/detection) from [MONAI](https://github.com/Project-MONAI). That tutorial predicts lung nodules from CT images using RetinaNet. The things I needed to modify included
 
 - image normalization: instead of scaling from a fixed range to \[0, 1\] I use a [`NormalizeIntensityd`](https://docs.monai.io/en/stable/transforms.html#normalizeintensityd) transform.
 - since I want to learn left-right landmarks, I removed the random flip transforms
