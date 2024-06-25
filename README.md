@@ -16,7 +16,7 @@ These points are visualized below: Nz (<font color="red">red</font>), Iz (<font 
 
 ## Create Training Data
 
-To create training data for this experiment I annotated 3 _template_ datasets. Using our automatic head segmentation tool (head40), I segmented the _template heads_ and 20 subjects from the [Calgary-Campinas](https://sites.google.com/view/calgary-campinas-dataset/home) (CC) dataset. Grouping tissues I obtain simplified head labels:
+To create training data for this experiment I annotated 3 _template_ datasets. Using our automatic head segmentation tool (head40), I segmented the _template heads_ and 200 subjects from the [Calgary-Campinas](https://sites.google.com/view/calgary-campinas-dataset/home) (CC) dataset. Grouping tissues I obtain simplified head labels:
 
 - brain (including CSF)
 - bone
